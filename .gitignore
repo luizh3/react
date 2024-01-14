@@ -1,0 +1,18 @@
+# Arquivos específicos do projeto React
+node_modules/
+build/
+dist/
+
+# Arquivos de configuração do Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Arquivos temporários do Visual Studio Code
+.vscode-test/
+
+# Arquivos de cache do Visual Studio Code
+.vscode-server/
+.history/
+
+# Snippets do Visual Studio Code
+.code-snippets
