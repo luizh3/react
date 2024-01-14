@@ -1,6 +1,6 @@
 # React
 
-- Ele existe porque eh dificil sincronizar os dados a UI Interface com javascript vanila, pois precisariamos alterar o DOM diretamente.
+- It exists because it is difficult to synchronize data from the UI Interface with vanilla javascript, as we would need to change the DOM directly.
 
 - JSX
 
@@ -81,13 +81,13 @@
 
 - Beneficios
 
-  - Renderiza os componentes na webpage UI baseado no estados atual deles
+  - Renders components in the webpage UI based on their current state
 
-  - Mantem os dados sincronizados com os estados e a UI
+  - Keeps data in sync with states and UI
 
 ## Features
 
-- Os components em React retornam algo chamado JSX, que se parece com um HTML.
+- React components return something called JSX, which looks like HTML.
 
 ## Extensions for VSCode
 
