@@ -118,3 +118,21 @@
   - `Use for tutorials or experiments, don't use for real world application`
 
   - `Create: npx create-react-app@5 pizza-meu`
+
+## Component Categories
+
+- Stateless / Presentational components
+
+  - No state
+  - Can receive props and simply present received data or other content
+  - Usually small and reusable
+
+- Stateful componets
+
+  - Have state
+  - Can still be reusable
+
+- Structural components
+  - "Pages", "layouts", or "screens" of the app
+  - Result of composition
+  - Can be huge and non-reusable ( but don't have to )
