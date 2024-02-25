@@ -313,3 +313,89 @@ Component instances that triggered re-render -> React Elements -> New Virtual DO
 - Effects allow us to write code that will run at different moments: mount, re-render, or unmount
 
 - A side effect is basically any "interation between a react component and the world outside the component" we can also think of a side as "code that actually does something"
+
+## UseEfect Cleanup Function
+
+- Function that we can return from an effect ( optional )
+
+- Runs on two different occasions:
+  - Before the effect is executed again
+  - After a component has unmounted
+- Necessary whenever the side effect keeps happening after the component has been re-rendered or unmounted
+
+- Each effect should do only one thing! Use one useEffect hook for each side effect. This makes effects easier to clean up.
+
+## Closure
+
+Closure is when a function is able to "remember" and access its lexical scope even when it is being executed outside its lexical scope.
+
+## What are react hooks ?
+
+- Special build-in functions that allows us to "hook" into React internals
+  - Creating and accesing state from Fiber tree
+  - Registering side effects in Fiber tree
+  - Manual DOM selections
+  - Many more...
+- Always start with "use" ( useState, useEffect, etc )
+
+- Enable easy reusing of non visual logic: we can compose multiple hooks into our own custom hooks
+
+- Give functions components the ability to own state run side effects at different lifecycle points ( Vefore v16.8 only avaiable in class components )
+
+- Rules
+  - Only Call hooks at the top level
+    - Do not call hooks inside conditionals, loops, nested functions, or after an early return
+    - This is necessary to ensure that hokks are always called in the same order ( hooks rely on this )
+  - Only call hooks from React functions
+    - Only call hooks inside a function component or a custom hook
+
+## UseState
+
+- Creating state
+  - Simple
+  - Based on function ( Lazy evaluation )
+- Updating state ( Make sure to NOT mutate objects on arrays, but to replace them )
+  - Simple
+  - Based on current state
+
+## UseRef
+
+- "Box" ( object ) with mutable .current property that is persisted across renders ( "normal" variables are always reset )
+
+- Two big use cases
+  - Creating a variable that stays the same between renders ( e.g. previous state, setTimeout id, etc )
+  - Selectiong and storing DOM elements
+- Refs are for data that is NOT rendered: usually only appear in event handlers or effects, not in JSX ( Otherwise use state )
+
+- Do NOT read write or read .current in render logic ( like state )
+
+## Custom Hooks
+
+- Allow us to reuse non-visual logic in multiple components
+- One custom hook should have one purpose, to make it reusable and portable ( Even across multiple projects )
+- Rules of hooks applyto custom hooks too
+- Function name needs to start with use
+- Unlike components can receive and return any relevant data ( usually [] or {} )
+
+## Functions Components X Class Components
+
+- Functions
+
+  - JavaScript function ( any type )
+  - Destructuring or props.X
+  - useState hook
+  - useEffect hook
+  - Return JSX from function
+  - Easier to build ( less boilerplate code )
+  - Cleaner code: useEffect combines all lifecycle-related code in a single place
+  - Easier to share stateful logic
+  - We don't need this keyword anymore
+
+- Class
+  - ES6 class, extending React.Component
+  - this.props.X
+  - this.setState()
+  - Lifecycle methods
+  - Class methods
+  - Return JSX from render method
+  - Lifecycle might be easier to uderstand for beginners
