@@ -399,3 +399,13 @@ Closure is when a function is able to "remember" and access its lexical scope ev
   - Class methods
   - Return JSX from render method
   - Lifecycle might be easier to uderstand for beginners
+
+## UseReducer
+
+- An alternative way of setting state, ideal for complex state and pieces of state.
+- Stores related pieces of state in a state object
+- useReducer needs reducer: function containing all logic to update state.Decouples state logic from component
+- reducer: pure function ( no side effects! ) that takes current state and action, and returns the next state
+- action: object that describes how to update state
+- dispatch: function to trigger state updates, by "sending" actions from event handlers to the reducer.
+- ideal for multiple related pieces of state and complex state
